@@ -2,7 +2,7 @@ data:extend({
   {
     type = "technology",
     name = "extinguisher",
-    icon = "__extinguisher__/graphics/technology/extinguisher.png",
+    icon = "__fire-extinguisher-continued__/graphics/technology/extinguisher.png",
     icon_size = 128,
     effects =
     {
@@ -15,15 +15,14 @@ data:extend({
         recipe = "extinguisher-ammo"
       }
     },
-    prerequisites = {"military-science-pack", "flamethrower"},
+    prerequisites = {"flammables", "military-2", "sulfur-processing"},
     unit =
     {
       count = 20,
       ingredients =
       {
-        {"logistic-science-pack", 1},
         {"automation-science-pack", 1},
-        {"military-science-pack", 1}
+        {"logistic-science-pack", 1}
       },
       time = 15
     },

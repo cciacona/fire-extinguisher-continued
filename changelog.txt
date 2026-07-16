@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2026-07-16
+  Added:
+    - Added quality-scaled range to the extinguisher gun.
+    - Added quality-scaled extinguishing radius to canisters.
+    - Added clearer item descriptions and range/radius tooltips.
+  Changed:
+    - Removed soot from the extinguisher gun's artwork (Looked weird to me).
+    - Replaced the borrowed flamethrower firing sounds with original extinguisher audio.
+    - Added sulfur processing as a technology prerequisite.
+    - Updated the mod for Factorio 2.1.
+    - Replaced the legacy impact-entity workaround with a script trigger effect.
+    - Migrated the item, recipe, technology, smoke, and stream prototypes to the Factorio 2.1 API.
+  Fixed:
+    - Extinguisher impacts now remove active fire stickers from burning buildings and units.

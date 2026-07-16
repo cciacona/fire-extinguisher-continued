@@ -1,9 +1,10 @@
 {
-	"name":"extinguisher",
-	"author":"Devilwarriors",
-	"version":"2.0.0",
-	"title":"Fire extinguisher",
-	"homepage":"https://mods.factorio.com/mods/devilwarriors/extinguisher",
-	"description":"A fire extinguisher",
-	"factorio_version": "2.0"
+  "name": "fire-extinguisher-continued",
+  "version": "0.2.0",
+  "factorio_version": "2.1",
+  "title": "Fire Extinguisher Continued",
+  "author": "cciacona",
+  "homepage": "https://mods.factorio.com/mod/fire-extinguisher-continued",
+  "description": "Adds a handheld fire extinguisher and refill canisters, updated for Factorio 2.1 with quality-scaled range and extinguishing radius.",
+  "dependencies": ["base >= 2.1.0", "! extinguisher"]
 }

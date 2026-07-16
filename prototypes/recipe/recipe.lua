@@ -7,12 +7,8 @@ data:extend({
     ingredients =
     {
       {type = "item", name = "steel-plate", amount = 5},
-      {type = "item", name = "iron-gear-wheel", amount = 10},
+      {type = "item", name = "iron-gear-wheel", amount = 10}
     },
-    results = {{
-      type = "item",
-      name = "extinguisher",
-      amount = 1
-    }}
+    results = {{type = "item", name = "extinguisher", amount = 1}}
   }
 })
