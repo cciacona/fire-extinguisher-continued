@@ -4,7 +4,7 @@ data:extend(
     type = "gun",
     name = "extinguisher",
     icon = "__extinguisher__/graphics/icons/extinguisher.png",
-    flags = {"goes-to-main-inventory"},
+    icon_size = 32,
     subgroup = "gun",
     order = "e[extinguisher]",
     attack_parameters =

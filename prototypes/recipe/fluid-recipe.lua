@@ -14,6 +14,10 @@ data:extend(
       {type="fluid", name="sulfuric-acid", amount=1},
       {type="fluid", name="water", amount=5}
     },
-    result = "extinguisher-ammo"
+    results = {{
+      type = "item",
+      name = "extinguisher-ammo",
+      amount = 1
+    }}
   }
 })

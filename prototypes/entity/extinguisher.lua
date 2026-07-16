@@ -6,7 +6,7 @@ end
 
 data:extend({
   {
-    type = "smoke",
+    type = "trivial-smoke",
     name = "extinguisher-smoke",
     flags = {"not-on-map"},
     duration = 300,
@@ -29,7 +29,7 @@ data:extend({
       direction_count = 1,
       shift = {-0.53125, -0.4375},
       priority = "high",
-      flags = { "compressed" },
+      flags = { "smoke" },
       animation_speed = 0.25,
       filename = "__extinguisher__/graphics/entity/smoke/smoke.png"
     }
@@ -41,7 +41,9 @@ data:extend({
     type = "corpse",
     name = "extinguisher-remnants",
     icon = "__base__/graphics/icons/remnants.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "not-on-map"},
+    hidden_in_factoriopedia = true,
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     tile_width = 1,
     tile_height = 1,
@@ -50,8 +52,9 @@ data:extend({
     order="d[remnants]-a[generic]-a[small]",
     time_before_removed = 60 * 60 * 5, -- 15 minutes
     final_render_layer = "lower-object",
-    animation =
-    {
+    animation = nil
+    -- animation =
+    -- {
 --      {
 --        width = 75,
 --        height = 75,
@@ -75,7 +78,7 @@ data:extend({
 --        y = 150,
 --        filename = "__extinguisher__/graphics/entity/extinguisher-stream/extinguisher-remnants-2.png"
 --      }
-    },
+    -- },
 
   },
 })

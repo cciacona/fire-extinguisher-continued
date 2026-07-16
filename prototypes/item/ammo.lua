@@ -3,10 +3,10 @@ data:extend({
     type = "ammo",
     name = "extinguisher-ammo",
     icon = "__extinguisher__/graphics/icons/extinguisher-canister.png",
-    flags = {"goes-to-main-inventory"},
+    icon_size = 32,
+    ammo_category = "extinguisher",
     ammo_type =
     {
-      category = "extinguisher",
       target_type = "position",
       clamp_position = true,
       action =
@@ -24,6 +24,6 @@ data:extend({
     magazine_size = 100,
     subgroup = "ammo",
     order = "e[extinguisher]",
-    stack_size = 50
+    stack_size = 100
   }
 })
