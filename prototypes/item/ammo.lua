@@ -37,6 +37,6 @@ data:extend({
     magazine_size = 100,
     subgroup = "ammo",
     order = "e[extinguisher]",
-    stack_size = 50
+    stack_size = 100
   }
 })

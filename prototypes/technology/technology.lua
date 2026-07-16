@@ -15,14 +15,15 @@ data:extend({
         recipe = "extinguisher-ammo"
       }
     },
-    prerequisites = {"flammables", "military-2", "sulfur-processing"},
+    prerequisites = {"military-science-pack", "flamethrower", "sulfur-processing"},
     unit =
     {
       count = 20,
       ingredients =
       {
         {"automation-science-pack", 1},
-        {"logistic-science-pack", 1}
+        {"logistic-science-pack", 1},
+        {"military-science-pack", 1}
       },
       time = 15
     },
