@@ -6,5 +6,5 @@
   "author": "cciacona",
   "homepage": "https://mods.factorio.com/mod/fire-extinguisher-continued",
   "description": "Adds a handheld fire extinguisher and refill canisters, updated for Factorio 2.1 with quality-scaled range and extinguishing radius.",
-  "dependencies": ["base >= 2.1.0", "! extinguisher"]
+  "dependencies": ["base >= 2.1.0","? quality","! extinguisher"]
 }

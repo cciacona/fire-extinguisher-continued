@@ -26,7 +26,7 @@ Quality bonuses work when the Quality feature is available. The mod also works w
 
 ## Compatibility
 
-- Factorio 2.1
+- Factorio 2.1 (and it's quality mod)
 - Cannot be enabled at the same time as the original `extinguisher` mod because both provide the same gameplay prototypes.
 
 ## Credits and license
