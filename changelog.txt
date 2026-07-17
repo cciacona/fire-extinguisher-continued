@@ -4,6 +4,7 @@ Date: 2026-07-16
   Features:
     - Added quality-scaled range to the extinguisher gun.
     - Added quality-scaled extinguishing radius to canisters.
+    - Added quality-scaled impact powder clouds matching each canister's extinguishing radius.
     - Added clearer item descriptions and range/radius tooltips.
   Changes:
     - Removed soot from the extinguisher gun's artwork (Looked weird to me).

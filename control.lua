@@ -4,6 +4,17 @@ local FIRE_STICKER_NAME = "fire-sticker"
 local BASE_EFFECT_RADIUS = 1
 local RADIUS_PER_QUALITY_LEVEL = 0.15
 local SHOT_RECORD_LIFETIME = 600
+local IMPACT_SMOKE_NAME = "extinguisher-impact-smoke"
+local IMPACT_CLOUD_INTERVAL = 3
+local IMPACT_CLOUD_OFFSETS =
+{
+  {x = 0.45, y = 0.05},
+  {x = -0.30, y = 0.55},
+  {x = 0.20, y = -0.70},
+  {x = 0.75, y = 0.35},
+  {x = -0.80, y = -0.25},
+  {x = -0.10, y = 0.95}
+}
 
 local function get_shooter(event)
   local shooter = event.cause_entity
@@ -125,6 +136,41 @@ local function get_effect_radius(quality_name)
   return BASE_EFFECT_RADIUS * (1 + RADIUS_PER_QUALITY_LEVEL * quality_level)
 end
 
+local function rotate_offset(offset, quarter_turns)
+  if quarter_turns == 1 then
+    return -offset.y, offset.x
+  elseif quarter_turns == 2 then
+    return -offset.x, -offset.y
+  elseif quarter_turns == 3 then
+    return offset.y, -offset.x
+  end
+
+  return offset.x, offset.y
+end
+
+local function create_impact_cloud(surface, position, radius, tick)
+  -- Every impact gets a central puff from the stream prototype. Add the
+  -- radius-scaled puffs less often so sustained fire stays lightweight.
+  if tick % IMPACT_CLOUD_INTERVAL ~= 0 then
+    return
+  end
+
+  local smoke_count = math.min(#IMPACT_CLOUD_OFFSETS, math.ceil(radius * 3))
+  local quarter_turns = math.floor(tick / IMPACT_CLOUD_INTERVAL) % 4
+
+  for index = 1, smoke_count do
+    local offset_x, offset_y = rotate_offset(IMPACT_CLOUD_OFFSETS[index], quarter_turns)
+
+    surface.create_trivial_smoke{
+      name = IMPACT_SMOKE_NAME,
+      position = {
+        x = position.x + offset_x * radius,
+        y = position.y + offset_y * radius
+      }
+    }
+  end
+end
+
 local function remove_fire_stickers(entity)
   if not entity or not entity.valid then
     return
@@ -156,6 +202,8 @@ local function extinguish_fire(event)
 
   local radius = get_effect_radius(get_shot_quality(event))
   local search_filter = {position = position, radius = radius}
+
+  create_impact_cloud(surface, position, radius, event.tick)
 
   for _, fire in pairs(surface.find_entities_filtered{
     position = position,

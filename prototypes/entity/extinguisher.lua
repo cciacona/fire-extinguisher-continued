@@ -28,6 +28,32 @@ data:extend({
       animation_speed = 0.25,
       filename = "__fire-extinguisher-continued__/graphics/entity/smoke/smoke.png"
     }
+  },
+  {
+    type = "trivial-smoke",
+    name = "extinguisher-impact-smoke",
+    hidden = true,
+    duration = 45,
+    fade_in_duration = 0,
+    fade_away_duration = 35,
+    spread_duration = 30,
+    start_scale = 0.25,
+    end_scale = 0.60,
+    color = make_color(1, 1, 1, 0.24),
+    cyclic = true,
+    affected_by_wind = true,
+    animation =
+    {
+      width = 152,
+      height = 120,
+      line_length = 5,
+      frame_count = 60,
+      shift = {-0.53125, -0.4375},
+      priority = "high",
+      flags = {"smoke"},
+      animation_speed = 0.50,
+      filename = "__fire-extinguisher-continued__/graphics/entity/smoke/smoke.png"
+    }
   }
 })
 
@@ -69,6 +95,12 @@ data:extend({
           type = "instant",
           target_effects =
           {
+            {
+              type = "create-trivial-smoke",
+              smoke_name = "extinguisher-impact-smoke",
+              starting_frame_deviation = 60,
+              only_when_visible = true
+            },
             {
               type = "script",
               effect_id = "extinguisher-impact"
